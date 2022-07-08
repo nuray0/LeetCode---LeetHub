@@ -1,6 +1,6 @@
 
 class Solution:
-
+    
     def containsDuplicate(self, nums: List[int]) -> bool:
         uniques = {}
         for n in nums:
@@ -13,6 +13,9 @@ class Solution:
             if uniques[key] > 1:
                 return True
         return False
+
+    
+    
    
     
  
