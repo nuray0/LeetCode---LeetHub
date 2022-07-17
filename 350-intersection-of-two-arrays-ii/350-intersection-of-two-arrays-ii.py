@@ -6,6 +6,5 @@ class Solution:
                 if nums2[j] == nums1[i] and j not in output:
                     output[j] = nums2[j]
                     break
-                else: continue
         return output.values()
         
