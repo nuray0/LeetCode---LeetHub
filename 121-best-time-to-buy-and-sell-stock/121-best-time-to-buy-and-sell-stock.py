@@ -22,7 +22,7 @@ class Solution:
         return max_profit 
       
         
-        # more memory efficient solution
+        # a cleaner colution
 #        max_profit = 0
 #        min_price = prices[0]
         
