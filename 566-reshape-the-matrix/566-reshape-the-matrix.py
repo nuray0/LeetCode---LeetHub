@@ -15,15 +15,25 @@ class Solution:
         elif m == r and n == c:
             return mat
         
-        output = [[]]
+
+        output = []
         
-        for i in range(m):
-            for j in range(n):
-                if len(output[-1]) < c:
-                    output[-1].append(mat[i][j])
-                else:
-                    output.append([mat[i][j]])
-                    
+#        # nested loop method - copy each element
+#        for i in range(m):
+#            for j in range(n):
+#                if len(output[-1]) < c:
+#                    output[-1].append(mat[i][j])
+#                else:
+#                    output.append([mat[i][j]])
+    
+    
+        # list comprehension method - flatten and copy
+        flat = [element for subset in mat for element in subset]
+        
+        for i in range(r):
+            output.append(flat[i * c : (i + 1) * c])
+            
         return output
+            
                     
         
