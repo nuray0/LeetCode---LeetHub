@@ -12,7 +12,7 @@ class Solution:
             if prices[right] > prices[left]:
                 profit = prices[right] - prices[left]
                 if profit > max_profit:
-                    max_profit = max(max_profit, profit)
+                    max_profit = profit
             else:
                 left = right
             right += 1
