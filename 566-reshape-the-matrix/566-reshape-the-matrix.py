@@ -16,7 +16,7 @@ class Solution:
             return mat
         
         
-#        # nested loop method - copy each element
+#        # copy each element
 #        output = [[]]
 #        for i in range(m):
 #            for j in range(n):
@@ -25,7 +25,7 @@ class Solution:
 #                else:
 #                    output.append([mat[i][j]])
     
-        # list comprehension method - flatten and copy
+        # flatten and copy
         output = []
         flat = [element for subset in mat for element in subset]
         
