@@ -15,10 +15,9 @@ class Solution:
         elif m == r and n == c:
             return mat
         
-
-        output = []
         
 #        # nested loop method - copy each element
+#        output = [[]]
 #        for i in range(m):
 #            for j in range(n):
 #                if len(output[-1]) < c:
@@ -26,8 +25,8 @@ class Solution:
 #                else:
 #                    output.append([mat[i][j]])
     
-    
         # list comprehension method - flatten and copy
+        output = []
         flat = [element for subset in mat for element in subset]
         
         for i in range(r):
