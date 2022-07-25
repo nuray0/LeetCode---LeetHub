@@ -19,10 +19,24 @@ class Solution:
                 
         return dum.next
     
+
+        ''' 
+        checking next value and 
+        skipping it if equal to current value
+        '''
+#        cur = head
+#        while cur:
+#            while cur and cur.next.val == cur.val:
+#                cur.next = cur.next.next
+#            cur = cur.next
+#        return head
         
-        # turning ll into list, sorting it's set 
-        # and creating a new ll from the list
-        # could be the decision if ll wasn't sorted
+    
+        ''' 
+        turning ll into list, sorting it's set 
+        and creating a new ll from the list
+        could be the decision if ll wasn't sorted
+        '''
 #        l = []
 #        while head:
 #            l.append(head.val)
