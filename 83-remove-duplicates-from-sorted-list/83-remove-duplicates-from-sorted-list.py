@@ -6,14 +6,19 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        # checking next value and skipping it if equal to current value
+        prev = dum = ListNode(None, head)
         cur = head
-        while cur and cur.next:
-            if cur.val == cur.next.val:
-                cur.next = cur.next.next
-            else:
+        
+        while cur:
+            if cur.val == prev.val:
+                prev.next = cur.next
                 cur = cur.next
-        return head
+            else:                
+                prev = prev.next
+                cur = cur.next
+                
+        return dum.next
+    
         
         # turning ll into list, sorting it's set 
         # and creating a new ll from the list
