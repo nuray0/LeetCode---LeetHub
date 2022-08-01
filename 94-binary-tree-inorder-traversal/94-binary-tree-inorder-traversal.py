@@ -25,9 +25,7 @@ class Solution:
         return out
     
     def helper(self, root, out):
-        if (root == None):
-            return
-        else:
+        if root:
             self.helper(root.left, out)
             out.append(root.val)
             self.helper(root.right, out)
