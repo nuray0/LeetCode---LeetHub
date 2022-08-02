@@ -16,8 +16,8 @@ class Solution:
         out = []
         self.helper(root, out)
         length = len(out)
-        for i in range(1, length):
-            if out[i - 1] >= out[i]:
+        for i in range(length - 1):
+            if out[i] >= out[i + 1]:
                 return False
         return True
         
