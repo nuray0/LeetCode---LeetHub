@@ -14,8 +14,10 @@ class Solution:
         return True
             
     def helper(self, root, out):
-        if root:
-            self.helper(root.left, out)
-            out.append(root.val)
-            self.helper(root.right, out)
+        if root is None:
+            return
+        
+        self.helper(root.left, out)
+        out.append(root.val)
+        self.helper(root.right, out)
         
