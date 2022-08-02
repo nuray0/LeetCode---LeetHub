@@ -9,7 +9,7 @@ class Solution:
         if root is None:
             return False
 
-        if not root.left and not root.right and root.val == targetSum:
+        if not (root.left or root.right) and root.val == targetSum:
             return True
         
         targetSum -= root.val
