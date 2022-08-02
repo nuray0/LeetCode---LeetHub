@@ -5,14 +5,20 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-#        if root is None:
-#            return TreeNode(val)
-        if root:
-            if root.val == val:
-                raise ValueError('insert value already exists in the tree')
-            elif root.val > val:
-                root.left = self.insertIntoBST(root.left, val)
+    
+    def insertIntoBST(self, root, val):
+        node = root
+        while node:
+            if node.val < val:
+                if node.right:
+                    node = node.right
+                else:
+                    node.right = TreeNode(val)
+                    break
             else:
-                root.right = self.insertIntoBST(root.right, val)
+                if node.left:
+                    node = node.left
+                else:
+                    node.left = TreeNode(val)
+                    break
         return root if root else TreeNode(val)
