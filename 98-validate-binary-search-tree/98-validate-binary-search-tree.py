@@ -6,8 +6,6 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        if root is None:
-            return
         out = []
         self.helper(root, out)
         for i in range(1, len(out)):
