@@ -1,10 +1,11 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        majority = -1
+        max_digit = -1
+        d = collections.Counter(nums)
+        for i in d:
+            if d[i] > majority:
+                majority = d[i]
+                max_digit = i
 
-f = open("user.out", 'w')
-for line in stdin:
-    ans = c = 0
-    for v in map(int, line.rstrip()[1:-1].split(',')):
-        if c == 0: ans = v
-        if ans == v: c += 1
-        else: c -= 1
-    print(ans, file=f)
-exit(0)
+        return max_digit
