@@ -1,9 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        s = list(set(nums))
-        for num in s:
-            nums.remove(num)
-        for num in nums:
-            s.remove(num)
-        return s[0]
         
+        count = {}
+        for num in nums:
+            if num not in count:
+                count[num] = 1
+            else:
+                count.pop(num)
+        for key, value in count.items():
+            return key
+                
