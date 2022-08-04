@@ -3,9 +3,12 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+            
+        temp = []
+        for i in range(4):
+            for num in nums:
+                if num == i:
+                    temp.append(i)
         for i in range(len(nums)):
-            for j in range(len(nums)):
-                if (j < len(nums) - 1) and nums[j] > nums[j + 1]:
-                    [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]]
-                if j > 0 and nums[i - 1] > nums[i]:
-                    [nums[j], nums[j - 1]] = [nums[j - 1], nums[j]]
+            nums[i] = temp[i]
+            
