@@ -8,11 +8,13 @@ class Solution:
         i = 0
         while i <= before_2:
             if nums[i] == 0:
-                nums[after_0], nums[i] = nums[i], nums[after_0]
+                if i != after_0:
+                    nums[after_0], nums[i] = nums[i], nums[after_0]
                 after_0 += 1
                 i += 1
             elif nums[i] == 2:
-                nums[before_2], nums[i] = nums[i], nums[before_2]
+                if i != before_2:
+                    nums[before_2], nums[i] = nums[i], nums[before_2]
                 before_2 -= 1
             else:
                 i += 1
