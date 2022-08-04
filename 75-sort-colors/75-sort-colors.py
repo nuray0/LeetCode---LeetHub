@@ -3,20 +3,21 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """               
-        mid = 1       # pivot
-        i = 0         # less than mid
-        j = 0         # current
-        k = len(nums) # greater than mid
-
-        while j < k:
-            cur = nums[j]
-            if cur > mid:
-                k -= 1
-                nums[j], nums[k] = nums[k], nums[j]
-            elif cur < mid:
-                nums[j], nums[i] = nums[i], nums[j]
-                j += 1
+        after_0 = 0
+        before_2 = len(nums) - 1
+        i = 0
+        while i <= before_2:
+            if nums[i] == 0:
+                temp = nums[after_0]
+                nums[after_0] = nums[i]
+                nums[i] = temp
+                after_0 += 1
                 i += 1
+            elif nums[i] == 2:
+                temp = nums[i]
+                nums[i] = nums[before_2]
+                nums[before_2] = temp
+                before_2 -= 1
             else:
-                j += 1
+                i += 1
             
