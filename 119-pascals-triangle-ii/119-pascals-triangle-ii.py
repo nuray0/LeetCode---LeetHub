@@ -1,13 +1,10 @@
 class Solution():
-    def getRow(self, r):
-        ans = [1]*(r+1);
-        up = r
-        down = 1
-        for i in range(1, r):
-            ans[i] = int(ans[i-1]*up/down);
-            up = up - 1
-            down = down + 1
-        return ans;
+    def getRow(self, rowIndex):
+        pascal = [1]*(rowIndex + 1)
+        for i in range(2,rowIndex+1):
+            for j in range(i-1,0,-1):
+                pascal[j] += pascal[j-1]
+        return pascal
 
                 
             
