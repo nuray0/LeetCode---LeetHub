@@ -1,10 +1,8 @@
-class Solution():
-    def getRow(self, rowIndex):
-        pascal = [1]*(rowIndex + 1)
-        for i in range(2,rowIndex+1):
-            for j in range(i-1,0,-1):
-                pascal[j] += pascal[j-1]
-        return pascal
+class Solution():    
+    def getRow(self, rowIndex: 'int') -> 'List[int]':
+        if rowIndex == 0: return [1]
+        ans = self.getRow(rowIndex - 1)
+        return [1] + [sum(x) for x in zip(ans, ans[1:])] + [1]
 
                 
             
