@@ -1,9 +1,14 @@
-class Solution():    
-    def getRow(self, rowIndex: 'int') -> 'List[int]':
-        if rowIndex == 0: return [1]
-        ans = self.getRow(rowIndex - 1)
-        return [1] + [sum(x) for x in zip(ans, ans[1:])] + [1]
-
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        res=[]
+        for i in range(rowIndex+1):
+            res.append([])
+            for j in range(i+1):
+                if j == 0 or j == i:
+                    res[i].append(1)
+                else:
+                    res[i].append(res[i - 1][j - 1] + res[i - 1][j])
+        return res[rowIndex]
                 
             
             
